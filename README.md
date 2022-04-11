@@ -14,7 +14,15 @@ pip3 install Scrapy
 
 ## Tutorial 
 https://docs.scrapy.org/en/latest/intro/tutorial.html
-Creating a project
+
+### Creating a project
 ```
 scrapy startproject tutorial
+```
+
+### Create kanasoku spider
+kanasoku_spider.py
+### Run spider
+```
+scrapy crawl kanasoku
 ```
