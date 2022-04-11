@@ -50,3 +50,8 @@ response.css("h2 a::text)").get()
 ```
 response.css("h2 a::text)").getall()
 ```
+
+### Crawl and store the results in json
+```
+scrapy crawl kanasoku -o kanasoku.json
+```
