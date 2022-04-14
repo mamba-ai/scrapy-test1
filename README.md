@@ -55,3 +55,9 @@ response.css("h2 a::text)").getall()
 ```
 scrapy crawl kanasoku -o kanasoku.json
 ```
+
+# Test Selenium
+## Selenium Installation
+```
+pip3 install selenium
+```
