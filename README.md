@@ -1,5 +1,5 @@
-# scrapy-test1
-scrapy-test1
+# Shein scrapy
+Shein scrapy
 
 ## installation
 create virtual env python 3.8.9
@@ -10,6 +10,7 @@ source venv/bin/activate
 install scrapy
 ```python
 pip3 install Scrapy
+/Users/zhaoliang/Documents/Git/scrapy-test/venv/bin/python3 -m pip install scrapy
 ```
 
 ## Tutorial 
@@ -57,10 +58,7 @@ scrapy crawl kanasoku -o kanasoku.json
 ```
 
 # Test Selenium
-## Selenium Installation
-```
-pip3 install selenium
-```
+[test selenium](selenium.md)
 # Crawl shein.com
 ## crawl women-clothing-recommended to collect the items 
 https://jp.shein.com/Clothing-c-2030.html?ici=jpen_tab01navbar03&scici=navbar_WomenHomePage~~tab01navbar03~~3~~webLink~~~~0&src_module=topcat&src_tab_page_id=page_select_class1650511045249&src_identifier=fc%3DWomen%60sc%3DCLOTHING%60tc%3D0%60oc%3D0%60ps%3Dtab01navbar03%60jc%3Durl_https%253A%252F%252Fjp.shein.com%252FClothing-c-2030.html&srctype=category&userpath=category%3ECLOTHING
