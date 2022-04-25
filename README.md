@@ -29,7 +29,13 @@ scrapy startproject tutorial
 编辑process_request(self, request, spider)函数，使用selenium来发送请求。
 https://testerhome.com/articles/30486
 
-
+### clemfromspace/ scrapy-selenium
+https://github.com/clemfromspace/scrapy-selenium
+### Install the scrapy selenium package
+```
+pip install scrapy-selenium
+>>>Successfully installed scrapy-selenium-0.0.7
+```
 # Test Selenium
 [test selenium](selenium.md)
 # Crawl shein.com
