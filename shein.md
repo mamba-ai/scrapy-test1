@@ -15,3 +15,13 @@ About brand:
 Pictures:
 Reviews:
 Category: Home  Women Clothing Women Tops, Blouses & Tee Women Blouses  Honeyspot Solid Drop Shoulder Oversized Blouse
+# 爬取shein数据
+找到对应的script
+```
+shein_script = response.css("script")[12].get()
+```
+进行分割，然后load为json
+```
+json.loads(shein_script.split("productIntroData:")[
+                                1].split(",\n        abt: ")[0])
+```
