@@ -25,6 +25,8 @@ class SheinSpider(scrapy.Spider):
     def parse(self, response):
         try:
             shein_script = response.css("script")[12].get()
+            print(shein_script.split("productIntroData:")[
+                1].split(",\n        abt: ")[0])
             ssdata = json.loads(shein_script.split("productIntroData:")[
                                 1].split(",\n        abt: ")[0])
             goods_name = ssdata["detail"]["goods_name"]
