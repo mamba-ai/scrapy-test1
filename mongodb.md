@@ -48,6 +48,25 @@ Count the entries. Use countDocuments or estimatedDocumentCount.
 ```
 db.items.countDocuments()
 ```
+Update item
+To update the first document in the sample_mflix.movies collection where title equals "Tag":
+
+```
+db.movies.updateOne( { title: "Tag" },
+{
+  $set: {
+    plot: "One month every year, five highly competitive friends
+           hit the ground running for a no-holds-barred game of tag"
+  }
+  { $currentDate: { lastUpdated: true } }
+})
+```
+
+Find one item
+Returns one document that satisfies the specified query criteria on the collection or view. If multiple documents satisfy the query, this method returns the first document according to the natural order which reflects the order of documents on the disk. In capped collections, natural order is the same as insertion order. If no document satisfies the query, the method returns null.
+```
+db.urls.findOne()
+```
 For more documentation of basic MongoDB operations in mongosh, see:
 + https://www.mongodb.com/docs/mongodb-shell/crud/insert/
 + https://www.mongodb.com/docs/mongodb-shell/crud/read/

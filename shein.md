@@ -51,3 +51,21 @@ response.css("div.S-product-item__wrapper a::attr(href)").getall()
 ```
 ## next page 
 https://jp.shein.com/Women-Blouses-c-1733.html?page=2
+
+## collected items for page 1-19
+https://jp.shein.com/Women-Blouses-c-1733.html?page=
+
+## update item
+To update the first document in the sample_mflix.movies collection where title equals "Tag":
+
+db.urls.updateOne( { url: '/Cat-Print-High-Low-Hem-Button-Through-Blouse-p-6006482-cat-1733.html' },
+{
+   $currentDate: { lastUpdated: true } 
+})
+
+## find one not crawled
+```
+cursor = db.urls.find()
+while cursor.hasNext():
+    cursor.next()
+```

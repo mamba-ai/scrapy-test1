@@ -19,10 +19,12 @@ class SheinSpider(scrapy.Spider):
 
     def start_requests(self):
         self.load_db()
-        urls = [
-            "https://jp.shein.com/Women-Blouses-c-1733.html"
-        ]
-        for url in urls:
+        # urls = [
+        #     "https://jp.shein.com/Women-Blouses-c-1733.html"
+        # ]
+        base_url = "https://jp.shein.com/Women-Blouses-c-1733.html?page="
+        for pageno in range(2, 20):
+            url = base_url + str(pageno)
             yield scrapy.Request(url=url, callback=self.parse)
             # yield SeleniumRequest(url=url, callback=self.parse)
 
