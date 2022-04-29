@@ -1,5 +1,6 @@
 import scrapy
 import json
+import pymongo
 # from shutil import which
 # from scrapy_selenium import SeleniumRequest
 
@@ -11,7 +12,13 @@ import json
 class SheinSpider(scrapy.Spider):
     name = "shein"
 
+    def load_db(self):
+        client = pymongo.MongoClient("mongodb://localhost:27017/")
+        db = client["mongotest"]
+        self.col = db["items"]
+
     def start_requests(self):
+        self.load_db()
         urls = [
             # "https://jp.shein.com/Honeyspot-Solid-Drop-Shoulder-Oversized-Blouse-p-10209809-cat-1733.html"
             # "https://jp.shein.com/DAZY-Bishop-Sleeve-Sheer-Blouse-p-9973864-cat-1733.html"
@@ -25,13 +32,11 @@ class SheinSpider(scrapy.Spider):
     def parse(self, response):
         try:
             shein_script = response.css("script")[12].get()
-            print(shein_script.split("productIntroData:")[
-                1].split(",\n        abt: ")[0])
             ssdata = json.loads(shein_script.split("productIntroData:")[
                                 1].split(",\n        abt: ")[0])
             goods_name = ssdata["detail"]["goods_name"]
-            skc = ssdata["getSeriesAndBrand"]["skc"]
-            print(goods_name, skc)
+            res = self.col.insert_one(ssdata)
+            print(goods_name, " inserted, id=", res.inserted_id)
         except Exception:
             print("Can not load goods")
         # title = response.css("h1.product-intro__head-name::text").get()

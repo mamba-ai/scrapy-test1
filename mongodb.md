@@ -44,6 +44,10 @@ Read All Documents in a Collection
 ```
 db.items.find()
 ```
+Count the entries. Use countDocuments or estimatedDocumentCount.
+```
+db.items.countDocuments()
+```
 For more documentation of basic MongoDB operations in mongosh, see:
 + https://www.mongodb.com/docs/mongodb-shell/crud/insert/
 + https://www.mongodb.com/docs/mongodb-shell/crud/read/
