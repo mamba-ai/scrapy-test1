@@ -31,6 +31,25 @@ mongod --config /usr/local/etc/mongod.conf --fork
 ```
 mongosh
 ```
+### mongosh commands
+To list the databases available to the user, use the helper 
+```
+show dbs
+```
+To switch databases
+```
+use <db>
+```
+Read All Documents in a Collection
+```
+db.items.find()
+```
+For more documentation of basic MongoDB operations in mongosh, see:
++ https://www.mongodb.com/docs/mongodb-shell/crud/insert/
++ https://www.mongodb.com/docs/mongodb-shell/crud/read/
++ https://www.mongodb.com/docs/mongodb-shell/crud/update/
++ https://www.mongodb.com/docs/mongodb-shell/crud/delete/
+
 安装mongodb
 https://www.runoob.com/python3/python-mongodb.html
 ```
