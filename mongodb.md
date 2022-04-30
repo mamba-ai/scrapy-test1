@@ -78,3 +78,15 @@ https://www.runoob.com/python3/python-mongodb.html
 ```
 pip3 install pymongo
 ```
+
+export mongodb
+https://www.mongodb.com/docs/database-tools/mongoexport/  
+```
+mongoexport --collection=items --db=mongotest --out=items.json
+```
+
+import mongodb
+https://www.mongodb.com/docs/database-tools/mongoimport/
+```
+mongoimport --db=mongotest --collection=items mongodb://localhost:27017/ --file=items.json
+```

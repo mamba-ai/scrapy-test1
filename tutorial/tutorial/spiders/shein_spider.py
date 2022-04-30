@@ -57,7 +57,7 @@ class SheinSpider(scrapy.Spider):
             print("currentid", self.current_url_id)
             url_filter = {"_id": self.current_url_id}
             self.urls_col.update_one(
-                url_filter, {"$currentDate": {"lastUpdated": True}})
+                url_filter, {"$currentDate": {"lastUpdated": "true"}})
         except Exception:
             print("Can not update url")
 
